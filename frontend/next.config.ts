@@ -8,9 +8,6 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'plus.unsplash.com' },
     ],
   },
-  // Suppress ESLint/TypeScript errors during production build
-  eslint: { ignoreDuringBuilds: true },
-  typescript: { ignoreBuildErrors: true },
 };
 
 export default nextConfig;
