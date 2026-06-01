@@ -1,20 +1,25 @@
 services:
+  # ─────────────────────────────────────────
+  # BACKEND — Node/Express API
+  # ─────────────────────────────────────────
   - type: web
     name: digimation-flight-backend
     runtime: node
+    plan: free
     rootDir: backend
     buildCommand: npm install && npm run build
-    plan: free
     startCommand: npm start
     envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
       - key: MONGODB_URI
         sync: false
       - key: JWT_SECRET
         sync: false
       - key: GEMINI_API_KEY
         sync: false
-      - key: PORT
-        value: 10000
       - key: FRONTEND_URL
         sync: false
       - key: SMTP_HOST
@@ -32,3 +37,21 @@ services:
       - key: SMTP_SECURE
         value: "false"
     healthCheckPath: /health
+
+  # ─────────────────────────────────────────
+  # FRONTEND — Next.js
+  # ─────────────────────────────────────────
+  - type: web
+    name: digimation-flight-frontend
+    runtime: node
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: NEXT_PUBLIC_API_URL
+        sync: false
