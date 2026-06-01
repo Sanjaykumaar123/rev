@@ -4,6 +4,7 @@ services:
     runtime: node
     rootDir: backend
     buildCommand: npm install && npm run build
+    plan: free
     startCommand: npm start
     envVars:
       - key: MONGODB_URI
