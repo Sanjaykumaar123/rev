@@ -1,0 +1,4 @@
+John Developer
+Skills: React, JavaScript, Node.js, Express, MongoDB, HTML, CSS, Next.js, Docker, PyTorch.
+Experience: Developer at TechCorp. Built SaaS pipelines and machine learning algorithms.
+Education: Bachelor of Science in Computer Science.

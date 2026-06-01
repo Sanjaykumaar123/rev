@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+:root {
+  --background: #17171d;
+  --foreground: #f3f4f6;
+  --primary: #fcc509;
+  --primary-foreground: #17171d;
+  --card: #1f1f27;
+  --card-foreground: #f8fafc;
+  --border: #2e2e38;
+  --muted: #888896;
+  --muted-foreground: #9ca3af;
+  --glass-bg: rgba(31, 31, 39, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --accent-glow: rgba(252, 197, 9, 0.15);
+}
+
+:root.light {
+  --background: #fff9fa;
+  --foreground: #111827;
+  --primary: #fcc509;
+  --primary-foreground: #17171d;
+  --card: #ffffff;
+  --card-foreground: #111827;
+  --border: #e5e7eb;
+  --muted: #6b7280;
+  --muted-foreground: #4b5563;
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --accent-glow: rgba(252, 197, 9, 0.1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  --color-accent-glow: var(--accent-glow);
+  
+  --font-sans: var(--font-inter), sans-serif;
+  --font-display: var(--font-poppins), sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Premium Custom Utilities */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-card {
+  background: rgba(31, 31, 39, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.light .glass-card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+.glass-card:hover {
+  border-color: rgba(252, 197, 9, 0.3);
+  box-shadow: 0 12px 40px 0 var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+/* Glowing text and buttons */
+.text-glow {
+  text-shadow: 0 0 12px rgba(252, 197, 9, 0.3);
+}
+
+.glow-btn {
+  box-shadow: 0 0 20px rgba(252, 197, 9, 0.2);
+  transition: all 0.3s ease;
+}
+.glow-btn:hover {
+  box-shadow: 0 0 30px rgba(252, 197, 9, 0.4);
+}
+
+/* Neural Network Background Grid */
+.neural-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.light .neural-grid {
+  background-image: 
+    linear-gradient(to right, rgba(23, 23, 29, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23, 23, 29, 0.03) 1px, transparent 1px);
+}
+
+/* Custom Webkit scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
